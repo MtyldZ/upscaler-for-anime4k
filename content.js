@@ -84,6 +84,8 @@ function makePipeline(A, name, device, input, target) {
     const up = target.width > 1.2 * input.width && target.height > 1.2 * input.height;
     return chain(device, input, [A.ClampHighlights, restore, up && x2].filter(Boolean));
   }
+  // Popup is loaded fresh from disk, page scripts only after an extension reload + page refresh.
+  if (typeof A[name] !== 'function') throw new Error(`Unknown mode "${name}". Reload the extension and refresh this page.`);
   return new A[name]({
     device,
     inputTexture: input,
