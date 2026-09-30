@@ -1,10 +1,17 @@
 const $ = (id) => document.getElementById(id);
 
-const GROUPS = { Adaptive: ['auto'], Performance: ['fast', 'balanced'], 'Anime4K presets': ['ModeA', 'ModeAA', 'ModeB', 'ModeBB', 'ModeC', 'ModeCA'] };
+const GROUPS = {
+  Adaptive: ['auto'],
+  Anime: ['fast', 'balanced', 'upscale'],
+  'Anime4K presets': ['ModeA', 'ModeAA', 'ModeB', 'ModeBB', 'ModeC', 'ModeCA'],
+  'General video': ['fsr'],
+};
 const HINTS = {
   auto: 'Picks the highest quality your GPU can keep in sync with the video.',
   fast: 'Small networks, one 2× pass. Lowest GPU load.',
   balanced: 'Large networks, one 2× pass. Good quality at moderate load.',
+  upscale: 'Anime4K 2× upscale without the restore pass. Changes the image less.',
+  fsr: 'Edge-aware upscale + sharpen (FSR 1). Best for YouTube and live action. Very light.',
   ModeA: 'Restore + upscale. Best for most anime with blur or compression.',
   ModeAA: 'Mode A applied twice. Sharpest result, heaviest load.',
   ModeB: 'Softer restore. For sources with ringing or aliasing.',

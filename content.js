@@ -74,13 +74,15 @@ function chain(device, input, classes) {
   return { pipelines, pass: (enc) => pipelines.forEach((p) => p.pass(enc)), getOutputTexture: () => input };
 }
 
-// fast/balanced: one restore + at most one x2 pass; the present shader scales the rest.
+// fast/balanced/upscale: optional restore + at most one x2 pass; the present shader scales the rest.
 // Library presets (ModeA...) run up to two x2 passes plus downscale, which is much heavier.
 function makePipeline(A, name, device, input, target) {
-  if (name === 'fast' || name === 'balanced') {
-    const [restore, x2] = name === 'fast' ? [A.CNNM, A.CNNx2M] : [A.CNNVL, A.CNNx2VL];
+  if (name === 'fsr') return fsr(device, input, target);
+  const custom = { fast: [A.CNNM, A.CNNx2M], balanced: [A.CNNVL, A.CNNx2VL], upscale: [null, A.CNNx2VL] }[name];
+  if (custom) {
+    const [restore, x2] = custom;
     const up = target.width > 1.2 * input.width && target.height > 1.2 * input.height;
-    return chain(device, input, up ? [A.ClampHighlights, restore, x2] : [A.ClampHighlights, restore]);
+    return chain(device, input, [A.ClampHighlights, restore, up && x2].filter(Boolean));
   }
   return new A[name]({
     device,

@@ -22,7 +22,9 @@ Requires Chrome or Edge with WebGPU (Chrome 113+).
 | Auto | Starts on Fast, steps up to Balanced / A while the GPU keeps up with the video frame rate. |
 | Fast | Small networks, one 2× pass. Lowest GPU load. |
 | Balanced | Large networks, one 2× pass. |
+| Upscale only | Anime4K 2× upscale without the restore pass. Changes the image less. |
 | A, A+A, B, B+B, C, C+A | Original Anime4K presets. Heavier. |
+| FSR (live action) | Edge-adaptive upscale + sharpen following AMD FSR 1. For YouTube / non-anime video. Very light. |
 
 ## Limitations
 
@@ -38,6 +40,7 @@ Requires Chrome or Edge with WebGPU (Chrome 113+).
 
 - [Anime4K](https://github.com/bloc97/Anime4K) by bloc97 (MIT)
 - [anime4k-webgpu](https://github.com/Anime4KWebBoost/Anime4K-WebGPU) v1.0.0 by Anime4KWebBoost Team (MIT), bundled unmodified as `anime4k-webgpu.js`, see `LICENSE-anime4k-webgpu.md`
+- FSR mode follows the [AMD FidelityFX FSR 1](https://github.com/GPUOpen-Effects/FidelityFX-FSR) algorithm (MIT), reimplemented in WGSL in `fsr.js`
 
 ## License
 
