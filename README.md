@@ -21,7 +21,7 @@ Requires Chrome or Edge with WebGPU (Chrome 113+).
 
 | Mode | What it does |
 | --- | --- |
-| Auto | Starts on Fast, steps up to Balanced / A while the GPU keeps up with the video frame rate. |
+| Auto | Starts on Fast, steps up to Balanced / A / A+A while the GPU keeps up with the video frame rate. |
 | Fast | Small networks, one 2× pass. Lowest GPU load. |
 | Balanced | Large networks, one 2× pass. |
 | Upscale only | Anime4K 2× upscale without the restore pass. Changes the image less. |

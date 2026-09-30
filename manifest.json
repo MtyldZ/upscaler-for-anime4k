@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Upscaler for Anime4K",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Real-time Anime4K upscaling for HTML5 video. Runs locally on your GPU via WebGPU.",
   "permissions": [
     "scripting",

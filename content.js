@@ -1,6 +1,6 @@
 // Anime4K overlay: copies each video frame into WebGPU, runs an Anime4K pipeline,
 // draws the result on a canvas placed exactly over the video.
-const AUTO_TIERS = ['fast', 'balanced', 'ModeA']; // light -> heavy
+const AUTO_TIERS = ['fast', 'balanced', 'ModeA', 'ModeAA']; // light -> heavy
 let settings = { ...DEFAULTS };
 chrome.storage.local.get(DEFAULTS).then((v) => { settings = v; });
 let session = null;
@@ -209,7 +209,7 @@ async function start(video) {
     if (load > 0.5 && s.tier > 0) {
       s.capped = s.tier--;
       s.build();
-    } else if (load < 0.2 && s.tier + 1 < s.capped) {
+    } else if (load < 0.3 && s.tier + 1 < s.capped) {
       s.tier++;
       s.build();
     }
