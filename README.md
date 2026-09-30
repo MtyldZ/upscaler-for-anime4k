@@ -4,9 +4,11 @@ Chrome extension that upscales HTML5 video in real time with [Anime4K](https://g
 
 ## Install
 
-1. Download this repo (Code → Download ZIP) and unzip it.
+1. Download `upscaler-for-anime4k-vX.Y.Z.zip` from the [latest release](https://github.com/MtyldZ/upscaler-for-anime4k/releases/latest) and unzip it.
 2. Open `chrome://extensions` and turn on **Developer mode**.
 3. Click **Load unpacked** and select the unzipped folder.
+
+**Updating:** unzip the new release over the old folder, click the reload icon on the extension card, then refresh any open video tabs.
 
 Requires Chrome or Edge with WebGPU (Chrome 113+).
 
