@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Anime4K Local",
+  "name": "Upscaler for Anime4K",
   "version": "1.2.0",
   "description": "Real-time Anime4K upscaling for HTML5 video. Runs locally on your GPU via WebGPU.",
   "permissions": [
@@ -14,7 +14,7 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "Anime4K",
+    "default_title": "Upscaler for Anime4K",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon-16.png",

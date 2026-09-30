@@ -1,4 +1,4 @@
-# Anime4K Local
+# Upscaler for Anime4K
 
 Chrome extension that upscales HTML5 video in real time with [Anime4K](https://github.com/bloc97/Anime4K), running locally on your GPU via WebGPU. No servers, no network calls.
 
@@ -38,3 +38,7 @@ Requires Chrome or Edge with WebGPU (Chrome 113+).
 
 - [Anime4K](https://github.com/bloc97/Anime4K) by bloc97 (MIT)
 - [anime4k-webgpu](https://github.com/Anime4KWebBoost/Anime4K-WebGPU) v1.0.0 by Anime4KWebBoost Team (MIT), bundled unmodified as `anime4k-webgpu.js`, see `LICENSE-anime4k-webgpu.md`
+
+## License
+
+[MIT](LICENSE) © 2026 Umut YILDIZ. Not affiliated with the Anime4K project.
